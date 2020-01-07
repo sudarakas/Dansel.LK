@@ -28,15 +28,7 @@
 		<nav id="navigation" class="menu">
 			<ul id="responsive">
 
-				<li><a href="index.html" id="current">Home</a>
-					<ul>
-						<li><a href="index.html">Home #1</a></li>
-						<li><a href="index-2.html">Home #2</a></li>
-						<li><a href="index-3.html">Home #3</a></li>
-						<li><a href="index-4.html">Home #4</a></li>
-					</ul>
-				</li>
-
+				<li><a href="index.html" id="current">Home</a></li>
 				<li><a href="#">Pages</a>
 					<ul>
 						<li><a href="job-page.html">Job Page</a></li>
@@ -98,19 +90,19 @@
 			<div class="search-container">
 
 				<!-- Form -->
-				<h2>Find job</h2>
-				<input type="text" class="ico-01" placeholder="job title, keywords or company name" value=""/>
-				<input type="text" class="ico-02" placeholder="city, province or region" value=""/>
+				<h2>Find Dansel</h2>
+				<input type="text" class="ico-01" placeholder="Category" value=""/>
+				<input type="text" class="ico-02" placeholder="City" value=""/>
 				<button><i class="fa fa-search"></i></button>
 
 				<!-- Browse Jobs -->
 				<div class="browse-jobs">
-					Browse job offers by <a href="browse-categories.html"> category</a> or <a href="#">location</a>
+					Sri Lankan First Online Dansel Directory :)
 				</div>
 
 				<!-- Announce -->
 				<div class="announce">
-					We’ve over <strong>15 000</strong> job offers for you!
+					We’ve over <strong>15 000</strong> dansel listing!
 				</div>
 
 			</div>
