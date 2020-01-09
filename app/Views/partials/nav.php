@@ -4,14 +4,14 @@
 
 		<!-- Logo -->
 		<div id="logo">
-			<h1><a href="index.html"><img src="images/logo.png" alt="Work Scout" /></a></h1>
+			<h1><a href="/"><img src="images/logo.png" alt="Work Scout" /></a></h1>
 		</div>
 
 		<!-- Menu -->
 		<nav id="navigation" class="menu">
 			<ul id="responsive">
 
-				<li><a href="index.html" id="current">Home</a></li>
+				<li><a href="/" id="current">Home</a></li>
 				<li><a href="#">Pages</a>
 					<ul>
 						<li><a href="job-page.html">Job Page</a></li>
@@ -35,7 +35,7 @@
 
 				<li><a href="#">For Employers</a>
 					<ul>
-						<li><a href="add-job.html">Add Job</a></li>
+						<li><a href="/dansel/add">Add Job</a></li>
 						<li><a href="manage-jobs.html">Manage Jobs</a></li>
 						<li><a href="manage-applications.html">Manage Applications</a></li>
 						<li><a href="browse-resumes.html">Browse Resumes</a></li>

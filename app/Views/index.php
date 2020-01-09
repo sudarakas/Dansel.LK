@@ -8,12 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/colors/yellow.css" id="colors">
+<link rel="stylesheet" href="css/colors/color.css" id="colors">
 </head>
 
 <body>
 <div id="wrapper">
-<?= $this->include('partials/nav') ?>
+<?=$this->include('partials/nav')?>
 <!-- Banner
 ================================================== -->
 <div id="banner" style="background: url(images/banner-home-01.jpg)">
@@ -35,7 +35,7 @@
 
 				<!-- Announce -->
 				<div class="announce">
-					We’ve over <strong>15 000</strong> dansel listing!
+					We’ve over <strong>15,000</strong> dansel listing!
 				</div>
 
 			</div>
@@ -57,10 +57,6 @@
 			<li><a href="#"><i class="fa fa-wrench"></i> Automotive Jobs</a></li>
 			<li><a href="#"><i class="fa fa-building-o"></i> Construction / Facilities</a></li>
 			<li><a href="#"><i class="fa fa-graduation-cap"></i> Education Training</a></li>
-			<li><a href="#"><i class="fa fa-medkit"></i> Healthcare</a></li>
-			<li><a href="#"><i class="fa fa-cutlery"></i> Restaurant / Food Service</a></li>
-			<li><a href="#"><i class="fa fa-globe"></i> Transportation / Logistics</a></li>
-			<li><a href="#"><i class="fa fa-laptop"></i> Telecommunications</a></li>
 		</ul>
 
 		<div class="clearfix"></div>
@@ -74,10 +70,9 @@
 
 <div class="container">
 
-	<!-- Recent Jobs -->
 	<div class="eleven columns">
 	<div class="padding-right">
-		<h3 class="margin-bottom-25">Recent Jobs</h3>
+		<h3 class="margin-bottom-25">Upcoming Dansel</h3>
 		<ul class="job-list">
 
 			<li class="highlighted"><a href="job-page.html">
@@ -158,7 +153,7 @@
 
 	<!-- Job Spotlight -->
 	<div class="five columns">
-		<h3 class="margin-bottom-5">Job Spotlight</h3>
+		<h3 class="margin-bottom-5">Top Contributors</h3>
 
 		<!-- Navigation -->
 		<div class="showbiz-navigation">
@@ -219,40 +214,10 @@
 	</div>
 </div>
 
-
-<!-- Testimonials -->
-<div id="testimonials">
-	<!-- Slider -->
-	<div class="container">
-		<div class="sixteen columns">
-			<div class="testimonials-slider">
-				  <ul class="slides">
-				    <li>
-				      <p>I have already heard back about the internship I applied through Job Finder, that's the fastest job reply I've ever gotten and it's so much better than waiting weeks to hear back.
-				      <span>Collis Ta’eed, Envato</span></p>
-				    </li>
-
-				    <li>
-				      <p>Nam eu eleifend nulla. Duis consectetur sit amet risus sit amet venenatis. Pellentesque pulvinar ante a tincidunt placerat. Donec dapibus efficitur arcu, a rhoncus lectus egestas elementum.
-				      <span>John Doe</span></p>
-				    </li>
-
-				    <li>
-				      <p>Maecenas congue sed massa et porttitor. Duis placerat commodo ex, ut faucibus est facilisis ac. Donec eleifend arcu sed sem posuere aliquet. Etiam lorem metus, suscipit vel tortor vitae.
-				      <span>Tom Smith</span></p>
-				    </li>
-
-				  </ul>
-			</div>
-		</div>
-	</div>
-</div>
-
-
 <!-- Infobox -->
 <div class="infobox">
 	<div class="container">
-		<div class="sixteen columns">Start Building Your Own Job Board Now <a href="my-account.html">Get Started</a></div>
+		<div class="sixteen columns">Let the world know your Dansela<a href="my-account.html">Post Now</a></div>
 	</div>
 </div>
 
@@ -260,7 +225,7 @@
 <!-- Recent Posts -->
 <div class="container">
 	<div class="sixteen columns">
-		<h3 class="margin-bottom-25">Recent Posts</h3>
+		<h3 class="margin-bottom-25">Recently Added Dansel</h3>
 	</div>
 
 
@@ -313,78 +278,7 @@
 	</div>
 
 </div>
-
-
-<!-- Footer
-================================================== -->
-<div class="margin-top-15"></div>
-
-<div id="footer">
-	<!-- Main -->
-	<div class="container">
-
-		<div class="seven columns">
-			<h4>About</h4>
-			<p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
-			<a href="#" class="button">Get Started</a>
-		</div>
-
-		<div class="three columns">
-			<h4>Company</h4>
-			<ul class="footer-links">
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Careers</a></li>
-				<li><a href="#">Our Blog</a></li>
-				<li><a href="#">Terms of Service</a></li>
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Hiring Hub</a></li>
-			</ul>
-		</div>
-
-		<div class="three columns">
-			<h4>Press</h4>
-			<ul class="footer-links">
-				<li><a href="#">In the News</a></li>
-				<li><a href="#">Press Releases</a></li>
-				<li><a href="#">Awards</a></li>
-				<li><a href="#">Testimonials</a></li>
-				<li><a href="#">Timeline</a></li>
-			</ul>
-		</div>
-
-		<div class="three columns">
-			<h4>Browse</h4>
-			<ul class="footer-links">
-				<li><a href="#">Freelancers by Category</a></li>
-				<li><a href="#">Freelancers in USA</a></li>
-				<li><a href="#">Freelancers in UK</a></li>
-				<li><a href="#">Freelancers in Canada</a></li>
-				<li><a href="#">Freelancers in Australia</a></li>
-				<li><a href="#">Find Jobs</a></li>
-
-			</ul>
-		</div>
-
-	</div>
-
-	<!-- Bottom -->
-	<div class="container">
-		<div class="footer-bottom">
-			<div class="sixteen columns">
-				<h4>Follow Us</h4>
-				<ul class="social-icons">
-					<li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
-					<li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
-					<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
-					<li><a class="linkedin" href="#"><i class="icon-linkedin"></i></a></li>
-				</ul>
-				<div class="copyrights">©  Copyright 2015 by <a href="#">Work Scout</a>. All Rights Reserved.</div>
-			</div>
-		</div>
-	</div>
-
-</div>
-
+<?=$this->include('partials/footer')?>
 <!-- Back To Top Button -->
 <div id="backtotop"><a href="#"></a></div>
 
