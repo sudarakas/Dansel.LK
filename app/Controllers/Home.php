@@ -7,10 +7,6 @@ class Home extends BaseController
 		return view('index');
 	}
 
-	public function home(){
-		return view('test/test');
-	}
-
 	//--------------------------------------------------------------------
 
 }
