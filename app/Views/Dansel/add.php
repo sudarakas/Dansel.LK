@@ -15,7 +15,13 @@
 ================================================== -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/colors/color.css" id="colors">
-
+    <style>
+        #map {
+            height: 300px;
+            margin-bottom: 3%;
+            margin-left: -0.1%;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +62,7 @@
                         <!-- Title -->
                         <div class="form">
                             <h5>Address</h5>
-                            <input class="search-field" type="text" placeholder="" value="" />
+                            <input class="search-field" type="text" placeholder="Address" value="" />
                         </div>
 
                         <!-- Location -->
@@ -124,14 +130,19 @@
                                 <option>Wattegama</option>
                                 <option>Weligama</option>
                             </select>
-                            <p class="note">Leave this blank if the location is not important</p>
                         </div>
 
                         <!-- Location -->
                         <div class="form">
-                            <h5>Location <span>(optional)</span></h5>
-                            <input class="search-field" type="text" placeholder="e.g. London" value="" />
-                            <p class="note">Leave this blank if the location is not important</p>
+                            <h5>Location <span></span></h5>
+                            <input class="search-field" type="text" type="text"
+                                id="searchmap">
+                            <div id="map" class="thirteen columns"></div>
+                        </div>
+
+                        <div class="form">
+                        <input class="search-field" type="text" name="lat" id="lat">
+                        <input class="search-field" type="text" name="lng" id="lng">
                         </div>
 
                         <!-- Job Type -->
@@ -237,7 +248,6 @@
 
                     </div>
                 </div>
-
             </div>
 
             <?=$this->include('partials/footer')?>
@@ -269,6 +279,51 @@
     <!-- WYSIWYG Editor -->
     <script type="text/javascript" src="/scripts/jquery.sceditor.bbcode.min.js"></script>
     <script type="text/javascript" src="/scripts/jquery.sceditor.js"></script>
+
+    <script>
+        var map;
+            function initAutocomplete() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 6.9814435, lng: 81.0741583},
+                zoom: 15
+                });
+
+                var marker = new google.maps.Marker({
+                position: {lat: 6.9814435, lng: 81.0741583},
+                map: map,
+                draggable: true,
+                });
+
+                var input = document.getElementById('searchmap');
+                var searchBox = new google.maps.places.SearchBox(input);
+                //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+                google.maps.event.addListener(searchBox,'places_changed',function(){
+                    var places = searchBox.getPlaces();
+                    var bounds = new google.maps.LatLngBounds();
+                    var i, place;
+                    for (i = 0; place=places[i]; i++) {
+                        bounds.extend(place.geometry.location);
+                        marker.setPosition(place.geometry.location);
+
+                    }
+
+                    map.fitBounds(bounds);
+                    map.setZoom(15);
+                });
+
+                google.maps.event.addListener(marker,'position_changed',function(){
+                    var lat = marker.getPosition().lat();
+                    var lng = marker.getPosition().lng();
+
+                    $('#lat').val(lat);
+                    $('#lng').val(lng);
+                });
+            }
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqEJqbGCHpvyJs-kfupMQzHeZJhfIO_OI&libraries=places&callback=initAutocomplete"
+        async defer></script>
 
 </body>
 
