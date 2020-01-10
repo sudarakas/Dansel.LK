@@ -2,7 +2,7 @@
 
 use CodeIgniter\Database\Migration;
 
-class CreatePlaygroundTables extends Migration
+class CreateDanselTables extends Migration
 {
     /**
      * Database creation is both an art and a science: there are many best practices,
@@ -37,6 +37,7 @@ class CreatePlaygroundTables extends Migration
             'image' => ['type' => 'varchar', 'constraint' => 255],
             'created_at' => ['type' => 'datetime', 'null' => true],
             'updated_at' => ['type' => 'datetime', 'null' => true],
+            'deleted_at' => ['type' => 'datetime', 'null' => true],
         ];
 
         // 'id' is a buzzword that indicates to addField() that this will be a primary key

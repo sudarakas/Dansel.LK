@@ -2,7 +2,7 @@
 
 use CodeIgniter\Database\Migration;
 
-class CreatePlaygroundTables extends Migration
+class CreateFeedbackTables extends Migration
 {
     /**
      * Database creation is both an art and a science: there are many best practices,
