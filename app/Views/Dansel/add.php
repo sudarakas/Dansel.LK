@@ -177,8 +177,8 @@
                         </div>
 
                         <div class="form">
-                        <input class="search-field" type="hidden" name="location_lat" id="lat">
-                        <input class="search-field" type="hidden" name="location_lng" id="lng">
+                        <input class="search-field" type="hidden" name="location_lat" id="lat" value="5.365">
+                        <input class="search-field" type="hidden" name="location_lng" id="lng" value="5.365">
                         </div>
 
                         <div class="form">
