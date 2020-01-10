@@ -61,14 +61,25 @@
                         <div class="form">
                             <h5>Title</h5>
                             <input class="search-field" type="text" name='title' placeholder="Title" value="" />
-                            <p class="required"><?= $validation->showError('title') ?></p>
+                            <?php
+                                if(\Config\Services::validation()->hasError('title'))
+                                {
+                                   echo "<p class='required'><?= $validation->showError('title') ?></p>";
+                                }
+                            ?>
+
                         </div>
 
                         <!-- Title -->
                         <div class="form">
                             <h5>Address</h5>
                             <input class="search-field" type="text" name="address" placeholder="Address" value="" />
-                            <p class="required"><?= $validation->showError('address') ?></p>
+                            <?php
+                                if(\Config\Services::validation()->hasError('title'))
+                                {
+                                    echo "<p class='required'><?= $validation->showError('address') ?></p>";
+                                }
+                            ?>
                         </div>
 
                         <!-- Location -->
@@ -144,7 +155,12 @@
                             <input class="search-field" type="text" type="text"
                                 id="searchmap">
                             <div id="map" class="thirteen columns"></div>
-                            <p class="required"><?= $validation->showError('location_lat') ?></p>
+                            <?php
+                                if(\Config\Services::validation()->hasError('title'))
+                                {
+                                    echo "<p class='required'><?= $validation->showError('location_lat') ?></p>";
+                                }
+                                ?>
                         </div>
 
                         <div class="form">
@@ -155,7 +171,14 @@
                         <div class="form">
                             <h5>Opening Date</h5>
                             <input data-role="date" type="text" name="opening_date" placeholder="YYYY-MM-DD">
-                            <p class="required"><?= $validation->showError('opening_date') ?></p>
+                            <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('title'))
+                                {
+                                    echo $validation->showError('opening_date');
+                                }
+                            ?>
+                            </p>
                         </div>
 
                         <div class="form">
@@ -179,7 +202,6 @@
                                 <p class="required"><?= $validation->showError('poya_date') ?></p>
                             </div>
                         </div>
-
                         <div class="form">
                             <h5>Opening Time</h5>
                             <input data-role="time" type="text" name="opening_time" placeholder="HH:MM">
@@ -253,6 +275,8 @@
                         </div>
                         <p class="required"><?= $validation->showError('image') ?></p>
                         <div class="divider margin-top-0"></div>
+
+
                         <button class="button big margin-top-5">
                         Add <i class="fa fa-arrow-circle-right"></i> </button>
                     </form>
