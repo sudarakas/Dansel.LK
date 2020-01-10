@@ -61,25 +61,28 @@
                         <div class="form">
                             <h5>Title</h5>
                             <input class="search-field" type="text" name='title' placeholder="Title" value="" />
+                            <p class='required'>
                             <?php
                                 if(\Config\Services::validation()->hasError('title'))
                                 {
-                                   echo "<p class='required'><?= $validation->showError('title') ?></p>";
+                                    echo $validation->showError('title');
                                 }
                             ?>
-
+                            </p>
                         </div>
 
                         <!-- Title -->
                         <div class="form">
                             <h5>Address</h5>
                             <input class="search-field" type="text" name="address" placeholder="Address" value="" />
+                            <p class='required'>
                             <?php
-                                if(\Config\Services::validation()->hasError('title'))
+                                if(\Config\Services::validation()->hasError('address'))
                                 {
-                                    echo "<p class='required'><?= $validation->showError('address') ?></p>";
+                                    echo $validation->showError('address');
                                 }
                             ?>
+                            </p>
                         </div>
 
                         <!-- Location -->
@@ -146,6 +149,14 @@
                                 <option>Wattala</option>
                                 <option>Wattegama</option>
                                 <option>Weligama</option>
+                                <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('city'))
+                                {
+                                    echo $validation->showError('city');
+                                }
+                            ?>
+                            </p>
                             </select>
                         </div>
 
@@ -155,12 +166,14 @@
                             <input class="search-field" type="text" type="text"
                                 id="searchmap">
                             <div id="map" class="thirteen columns"></div>
+                            <p class='required'>
                             <?php
-                                if(\Config\Services::validation()->hasError('title'))
+                                if(\Config\Services::validation()->hasError('location_lat'))
                                 {
-                                    echo "<p class='required'><?= $validation->showError('location_lat') ?></p>";
+                                    echo $validation->showError('location_lat');
                                 }
-                                ?>
+                            ?>
+                            </p>
                         </div>
 
                         <div class="form">
@@ -173,7 +186,7 @@
                             <input data-role="date" type="text" name="opening_date" placeholder="YYYY-MM-DD">
                             <p class='required'>
                             <?php
-                                if(\Config\Services::validation()->hasError('title'))
+                                if(\Config\Services::validation()->hasError('opening_date'))
                                 {
                                     echo $validation->showError('opening_date');
                                 }
@@ -199,26 +212,54 @@
                                     <option value="12">Unduvap Poya</option>
                                     <option value="13">Other</option>
                                 </select>
-                                <p class="required"><?= $validation->showError('poya_date') ?></p>
+                                <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('poya_date'))
+                                {
+                                    echo $validation->showError('poya_date');
+                                }
+                            ?>
+                            </p>
                             </div>
                         </div>
                         <div class="form">
                             <h5>Opening Time</h5>
                             <input data-role="time" type="text" name="opening_time" placeholder="HH:MM">
-                            <p class="required"><?= $validation->showError('opening_time') ?></p>
+                            <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('opening_time'))
+                                {
+                                    echo $validation->showError('opening_time');
+                                }
+                            ?>
+                            </p>
                         </div>
 
                         <div class="form">
                             <h5>End Time</h5>
                             <input data-role="time" type="text" name="end_time" placeholder="HH:MM">
-                            <p class="required"><?= $validation->showError('end_time') ?></p>
+                            <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('end_time'))
+                                {
+                                    echo $validation->showError('end_time');
+                                }
+                            ?>
+                            </p>
                         </div>
 
                         <!-- Job Type -->
                         <div class="form">
                             <h5>Time</h5>
                             <input data-role="time" type="text" name="time" placeholder="">
-                            <p class="required"><?= $validation->showError('time') ?></p>
+                            <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('time'))
+                                {
+                                    echo $validation->showError('time');
+                                }
+                            ?>
+                            </p>
                         </div>
 
                         <!-- Choose Category -->
@@ -235,7 +276,14 @@
                                     <option value="7">Sales & Marketing Experts</option>
                                     <option value="8">Accountants & Consultants</option>
                                 </select>
-                                <p class="required"><?= $validation->showError('category') ?></p>
+                                <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('category'))
+                                {
+                                    echo $validation->showError('category');
+                                }
+                            ?>
+                            </p>
                             </div>
                         </div>
 
@@ -243,7 +291,14 @@
                         <div class="form">
                             <h5>Description</h5>
                             <textarea class="WYSIWYG" name="description" cols="40" rows="3" id="summary" spellcheck="true"></textarea>
-                            <p class="required"><?= $validation->showError('description') ?></p>
+                            <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('description'))
+                                {
+                                    echo $validation->showError('description');
+                                }
+                            ?>
+                            </p>
                         </div>
 
                         <!-- Company Details -->
@@ -254,14 +309,28 @@
                         <div class="form">
                             <h5>Name</h5>
                             <input type="text" name="organizing_team" placeholder="Enter the name">
-                            <p class="required"><?= $validation->showError('organizing_team') ?></p>
+                            <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('organizing_team'))
+                                {
+                                    echo $validation->showError('organizing_team');
+                                }
+                            ?>
+                            </p>
                         </div>
 
                         <!-- Website -->
                         <div class="form">
                             <h5>Contact Number</span></h5>
                             <input type="text"  name ="organizing_number" placeholder="0XXXXXXXXX">
-                            <p class="required"><?= $validation->showError('organizing_number') ?></p>
+                            <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('organizing_number'))
+                                {
+                                    echo $validation->showError('organizing_number');
+                                }
+                            ?>
+                            </p>
                         </div>
 
                         <!-- Logo -->
@@ -273,7 +342,14 @@
                             </label>
                             <span class="fake-input" id="file-name">No file selected</span>
                         </div>
-                        <p class="required"><?= $validation->showError('image') ?></p>
+                        <p class='required'>
+                            <?php
+                                if(\Config\Services::validation()->hasError('image'))
+                                {
+                                    echo $validation->showError('image');
+                                }
+                            ?>
+                            </p>
                         <div class="divider margin-top-0"></div>
 
 
