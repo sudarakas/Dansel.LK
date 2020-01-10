@@ -61,13 +61,14 @@
                         <div class="form">
                             <h5>Title</h5>
                             <input class="search-field" type="text" name='title' placeholder="Title" value="" />
-                            <p class="required"><?= $validation->showError('name') ?></p>
+                            <p class="required"><?= $validation->showError('title') ?></p>
                         </div>
 
                         <!-- Title -->
                         <div class="form">
                             <h5>Address</h5>
                             <input class="search-field" type="text" name="address" placeholder="Address" value="" />
+                            <p class="required"><?= $validation->showError('address') ?></p>
                         </div>
 
                         <!-- Location -->
@@ -143,6 +144,7 @@
                             <input class="search-field" type="text" type="text"
                                 id="searchmap">
                             <div id="map" class="thirteen columns"></div>
+                            <p class="required"><?= $validation->showError('location_lat') ?></p>
                         </div>
 
                         <div class="form">
@@ -153,6 +155,7 @@
                         <div class="form">
                             <h5>Opening Date</h5>
                             <input data-role="date" type="text" name="opening_date" placeholder="YYYY-MM-DD">
+                            <p class="required"><?= $validation->showError('opening_date') ?></p>
                         </div>
 
                         <div class="form">
@@ -173,30 +176,34 @@
                                     <option value="12">Unduvap Poya</option>
                                     <option value="13">Other</option>
                                 </select>
+                                <p class="required"><?= $validation->showError('poya_date') ?></p>
                             </div>
                         </div>
 
                         <div class="form">
                             <h5>Opening Time</h5>
                             <input data-role="time" type="text" name="opening_time" placeholder="HH:MM">
+                            <p class="required"><?= $validation->showError('opening_time') ?></p>
                         </div>
 
                         <div class="form">
                             <h5>End Time</h5>
                             <input data-role="time" type="text" name="end_time" placeholder="HH:MM">
+                            <p class="required"><?= $validation->showError('end_time') ?></p>
                         </div>
 
                         <!-- Job Type -->
                         <div class="form">
                             <h5>Time</h5>
                             <input data-role="time" type="text" name="time" placeholder="">
+                            <p class="required"><?= $validation->showError('time') ?></p>
                         </div>
 
                         <!-- Choose Category -->
                         <div class="form">
                             <div class="select">
                                 <h5>Category</h5>
-                                <select data-placeholder="Choose Categories" class="chosen-select">
+                                <select data-placeholder="Choose Categories" name="category" class="chosen-select">
                                     <option value="1">Web Developers</option>
                                     <option value="2">Mobile Developers</option>
                                     <option value="3">Designers & Creatives</option>
@@ -206,13 +213,15 @@
                                     <option value="7">Sales & Marketing Experts</option>
                                     <option value="8">Accountants & Consultants</option>
                                 </select>
+                                <p class="required"><?= $validation->showError('category') ?></p>
                             </div>
                         </div>
 
                         <!-- Description -->
                         <div class="form">
                             <h5>Description</h5>
-                            <textarea class="WYSIWYG" name="summary" cols="40" rows="3" id="summary" spellcheck="true"></textarea>
+                            <textarea class="WYSIWYG" name="description" cols="40" rows="3" id="summary" spellcheck="true"></textarea>
+                            <p class="required"><?= $validation->showError('description') ?></p>
                         </div>
 
                         <!-- Company Details -->
@@ -222,25 +231,27 @@
                         <!-- Company Name -->
                         <div class="form">
                             <h5>Name</h5>
-                            <input type="text" placeholder="Enter the name">
+                            <input type="text" name="organizing_team" placeholder="Enter the name">
+                            <p class="required"><?= $validation->showError('organizing_team') ?></p>
                         </div>
 
                         <!-- Website -->
                         <div class="form">
                             <h5>Contact Number</span></h5>
-                            <input type="text" placeholder="0XXXXXXXXX">
+                            <input type="text"  name ="organizing_number" placeholder="0XXXXXXXXX">
+                            <p class="required"><?= $validation->showError('organizing_number') ?></p>
                         </div>
 
                         <!-- Logo -->
                         <div class="form">
                             <h5>Banner <span>(optional)</span></h5>
                             <label class="upload-btn">
-                                <input type="file" multiple />
+                                <input type="file" name="image" id="file-input"/>
                                 <i class="fa fa-upload"></i> Browse
                             </label>
-                            <span class="fake-input">No file selected</span>
+                            <span class="fake-input" id="file-name">No file selected</span>
                         </div>
-
+                        <p class="required"><?= $validation->showError('image') ?></p>
                         <div class="divider margin-top-0"></div>
                         <button class="button big margin-top-5">
                         Add <i class="fa fa-arrow-circle-right"></i> </button>
@@ -323,6 +334,17 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqEJqbGCHpvyJs-kfupMQzHeZJhfIO_OI&libraries=places&callback=initAutocomplete"
         async defer></script>
+
+    <script>
+        //Display File Name
+        var input = document.getElementById( 'file-input' );
+            var infoArea = document.getElementById( 'file-name' );
+            input.addEventListener( 'change', showFileName );
+            function showFileName( event ) {      
+            var input = event.srcElement;         
+            var fileName = input.files[0].name;
+            infoArea.textContent = 'File name: ' + fileName;
+    </script>
 
 </body>
 
