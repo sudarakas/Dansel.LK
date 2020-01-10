@@ -26,6 +26,8 @@ class CreateFeedbackTables extends Migration
             'comment' => ['type' => 'varchar', 'constraint' => 1000],
             'created_at' => ['type' => 'datetime', 'null' => true],
             'updated_at' => ['type' => 'datetime', 'null' => true],
+            'deleted_at' => ['type' => 'datetime', 'null' => true],
+
         ];
 
         // 'id' is a buzzword that indicates to addField() that this will be a primary key

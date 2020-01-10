@@ -52,23 +52,23 @@
                         <div class="notification notice closeable margin-bottom-40">
                             <p><span>Have an account?</span> If you don’t have an account you can create one below by entering your email address. A password will be automatically emailed to you.</p>
                         </div>
-
+                    <form action="" method="post">
                         <!-- Email -->
                         <div class="form">
-                            <h5>Name</h5>
-                            <input class="search-field" type="text" placeholder="Name" value="" />
+                            <h5>Title</h5>
+                            <input class="search-field" type="text" name='name' placeholder="Title" value="" />
                         </div>
 
                         <!-- Title -->
                         <div class="form">
                             <h5>Address</h5>
-                            <input class="search-field" type="text" placeholder="Address" value="" />
+                            <input class="search-field" type="text" name="address" placeholder="Address" value="" />
                         </div>
 
                         <!-- Location -->
                         <div class="form">
                             <h5>City</h5>
-                            <select data-placeholder="Full-Time" class="chosen-select">
+                            <select data-placeholder="City" name="city" class="chosen-select">
                                 <option>Ambalangoda</option>
                                 <option>Ampara</option>
                                 <option>Anuradhapura</option>
@@ -141,19 +141,19 @@
                         </div>
 
                         <div class="form">
-                        <input class="search-field" type="hidden" name="lat" id="lat">
-                        <input class="search-field" type="hidden" name="lng" id="lng">
+                        <input class="search-field" type="hidden" name="location_lat" id="lat">
+                        <input class="search-field" type="hidden" name="location_lng" id="lng">
                         </div>
 
                         <div class="form">
                             <h5>Opening Date</h5>
-                            <input data-role="date" type="text" placeholder="YYYY-MM-DD">
+                            <input data-role="date" type="text" name="opening_date" placeholder="YYYY-MM-DD">
                         </div>
 
                         <div class="form">
                             <div class="select">
                                 <h5>Poya Day</h5>
-                                <select data-placeholder="Choose Categories" class="chosen-select">
+                                <select data-placeholder="Choose Categories" name="poya_date" class="chosen-select">
                                     <option value="1">Duruthu Poya</option>
                                     <option value="2">Navam Poya</option>
                                     <option value="3">Medin Poya</option>
@@ -173,18 +173,18 @@
 
                         <div class="form">
                             <h5>Opening Time</h5>
-                            <input data-role="time" type="text" placeholder="HH:MM">
+                            <input data-role="time" type="text" name="opening_time" placeholder="HH:MM">
                         </div>
 
                         <div class="form">
                             <h5>End Time</h5>
-                            <input data-role="time" type="text" placeholder="HH:MM">
+                            <input data-role="time" type="text" name="end_time" placeholder="HH:MM">
                         </div>
 
                         <!-- Job Type -->
                         <div class="form">
                             <h5>Time</h5>
-                            <input data-role="time" type="text" placeholder="">
+                            <input data-role="time" type="text" name="time" placeholder="">
                         </div>
 
                         <!-- Choose Category -->
@@ -237,8 +237,9 @@
                         </div>
 
                         <div class="divider margin-top-0"></div>
-                        <a href="#" class="button big margin-top-5">Add <i class="fa fa-arrow-circle-right"></i></a>
-
+                        <button class="button big margin-top-5">
+                        Add <i class="fa fa-arrow-circle-right"></i> </button>
+                    </form>
                     </div>
                 </div>
             </div>
