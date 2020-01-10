@@ -77,10 +77,13 @@ $routes->get('/', 'Home::index');
 
 //Login & Registration Routes
 $routes->get('/my-account', 'Authentication::showLoginPage');
-//$routes->get('/my-account#tab2', 'Authentication::showLoginPage');
 
 //Dansel Routes
 $routes->get('/dansel/add', 'Dansel::showAddPage');
+$routes->get('/dansel/edit/{$id}', 'Dansel::showEditPage');
+
+//Contact Us Route
+$routes->get('/contact-us', 'Contact::showContactUs');
 
 /**
  * --------------------------------------------------------------------

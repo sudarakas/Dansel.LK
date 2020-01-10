@@ -9,7 +9,7 @@ class Authentication extends BaseController
 
     public function showRegistrationPage()
     {
-        return view('test/test');
+        return view('Authentication/my-account');
     }
 
     //--------------------------------------------------------------------

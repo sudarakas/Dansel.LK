@@ -7,6 +7,11 @@ class Dansel extends BaseController
         return view('Dansel/add');
     }
 
+    public function showEditPage($id)
+    {
+        return view('Dansel/edit');
+    }
+
     //--------------------------------------------------------------------
 
 }
