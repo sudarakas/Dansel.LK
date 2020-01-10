@@ -80,6 +80,7 @@ $routes->get('/my-account', 'Authentication::showLoginPage');
 
 //Dansel Routes
 $routes->get('/dansel/add', 'Dansel::showAddPage');
+$routes->post('/dansel/store', 'Dansel::storeDansel');
 $routes->get('/dansel/edit/{$id}', 'Dansel::showEditPage');
 
 //Contact Us Route

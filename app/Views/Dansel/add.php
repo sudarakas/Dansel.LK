@@ -48,15 +48,20 @@
                 <div class="sixteen columns">
                     <div class="submit-page">
 
+
+                    <div class="notification alert-danger print-error-msg" style="display:none">
+
+                    </div>
                         <!-- Notice -->
                         <div class="notification notice closeable margin-bottom-40">
                             <p><span>Have an account?</span> If you don’t have an account you can create one below by entering your email address. A password will be automatically emailed to you.</p>
                         </div>
-                    <form action="" method="post">
+                    <form action="/dansel/store" method="post">
                         <!-- Email -->
                         <div class="form">
                             <h5>Title</h5>
-                            <input class="search-field" type="text" name='name' placeholder="Title" value="" />
+                            <input class="search-field" type="text" name='title' placeholder="Title" value="" />
+                            <p class="required"><?= $validation->showError('name') ?></p>
                         </div>
 
                         <!-- Title -->

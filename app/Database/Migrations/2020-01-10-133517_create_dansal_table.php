@@ -20,7 +20,7 @@ class CreateDanselTables extends Migration
          * can use both features of CodeIgniter\Model, $useTimestamps and $useSoftDeletes.
          */
         $fields = [
-            'name' => ['type' => 'varchar', 'constraint' => 255],
+            'title' => ['type' => 'varchar', 'constraint' => 255],
             'address' => ['type' => 'varchar', 'constraint' => 255],
             'city' => ['type' => 'varchar', 'constraint' => 50],
             'location_lat' => ['type' => 'varchar', 'constraint' => 50],
