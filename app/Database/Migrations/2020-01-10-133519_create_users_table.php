@@ -20,9 +20,11 @@ class CreatePlaygroundTables extends Migration
          * can use both features of CodeIgniter\Model, $useTimestamps and $useSoftDeletes.
          */
         $fields = [
-            'name' => ['type' => 'varchar', 'constraint' => 255],
+            'first_name' => ['type' => 'varchar', 'constraint' => 100],
+            'last_name' => ['type' => 'varchar', 'constraint' => 100],
+            'phone_no' => ['type' => 'varchar', 'constraint' => 15],
             'email' => ['type' => 'varchar', 'constraint' => 255],
-            'message' => ['type' => 'text'],
+            'password' => ['type' => 'varchar', 'constraint' => 255],
             'created_at' => ['type' => 'datetime', 'null' => true],
             'updated_at' => ['type' => 'datetime', 'null' => true],
         ];
@@ -33,17 +35,17 @@ class CreatePlaygroundTables extends Migration
         $this->forge->addField($fields);
         // Keys help optimize database performance; we'll add some for fields we are likely
         // to search or filter by
-        $this->forge->addKey('name');
+        $this->forge->addKey('dansel_id');
         $this->forge->addKey('created_at');
 
         // While not necessary, indexing against `deleted_at` is a good idea if your model
         // is using soft deletes, since most SELECT statements will include `deleted_at`
 
-        $this->forge->createTable('contactus');
+        $this->forge->createTable('feedback');
 
     }
     public function down()
     {
-        $this->forge->dropTable('contactus');
+        $this->forge->dropTable('feedback');
     }
 }
