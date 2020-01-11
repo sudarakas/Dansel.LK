@@ -44,7 +44,7 @@ class Dansel extends BaseController
         } else {
 
             $file = $this->request->getFile('banner');
-            $newName = $file->getRandomName();
+            $randomImageName = $file->getRandomName();
 
             $dansel->save([
                 'name' => $this->request->getVar('title'),
@@ -61,11 +61,12 @@ class Dansel extends BaseController
                 'description' => $this->request->getVar('description'),
                 'organizing_team' => $this->request->getVar('organizing_team'),
                 'organizing_number' => $this->request->getVar('organizing_number'),
-                'image' => $newName,
+                'image' => $randomImageName,
             ]);
 
+            //store file in writable->uploads->images
+            $file->store('images', $randomImageName);
             
-            $file->store('images', $newName);
             return redirect()->to('/');
 
         }
