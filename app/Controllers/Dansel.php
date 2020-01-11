@@ -40,13 +40,15 @@ class Dansel extends BaseController
             return view('Dansel/add', [
                 'validation' => $this->validator,
             ]);
+
+            //return redirect()->back()->withInput();
         } else {
 
             $file = $this->request->getFile('banner');
             $randomImageName = $file->getRandomName();
 
             $dansel->save([
-                'name' => $this->request->getVar('title'),
+                'title' => $this->request->getVar('title'),
                 'address' => $this->request->getVar('address'),
                 'city' => $this->request->getVar('city'),
                 'location_lat' => $this->request->getVar('location_lat'),
@@ -73,7 +75,14 @@ class Dansel extends BaseController
 
     public function showViewPage($id)
     {
-        echo $id;
+        
+        $db  = \Config\Database::connect();
+        $dansel = $db->table('dansels')->where('id', $id)->get();
+        $dansel=$dansel->getResult();
+        return view('Dansel/view',['data'=>$dansel]);
+
+        
+
 
     }
 

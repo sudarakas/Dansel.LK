@@ -60,7 +60,7 @@
                         <!-- Email -->
                         <div class="form">
                             <h5>Title</h5>
-                            <input class="search-field" type="text" name='title' placeholder="Title" value="" />
+                            <input class="search-field" type="text" name='title' placeholder="Title" value="<?= old('title') ?>" />
                             <p class='required'>
                             <?php
                                 if(\Config\Services::validation()->hasError('title'))
