@@ -65,7 +65,7 @@ class Dansel extends BaseController
             ]);
 
             
-            $file->move(WRITEPATH.'/uploads', $newName);
+            $file->store('images', $newName);
             return redirect()->to('/');
 
         }
