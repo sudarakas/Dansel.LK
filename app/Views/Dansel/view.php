@@ -5,7 +5,12 @@
     <!-- Basic Page Needs
 ================================================== -->
     <meta charset="utf-8">
-    <title>Add Dansel</title>
+    <title><?php
+                
+            echo $data[0]->title;
+                
+            ?>
+    </title>
 
     <!-- Mobile Specific Metas
 ================================================== -->
@@ -31,23 +36,16 @@
 
 <!-- Titlebar
 ================================================== -->
-<div id="titlebar" class="photo-bg" style="background: url(images/job-page-photo.jpg)">
+<div id="titlebar" class="photo-bg" style='background: url(<?php echo base_url('uploads/images/'.$data[0]->image); ?>)'>
 	<div class="container">
 		<div class="ten columns">
-			<span><a href="browse-jobs.html">Restaurant / Food Service</a></span>
-
-            <?php
-                foreach ($data as $row)
-                {
-                        //echo $row->title;
-                        echo "<h2> $row->title <span class='full-time'>Full-Time</span></h2>";
-                }
-            ?>
-			
+			<span>
+        <a href="browse-jobs.html"><?php echo $data[0]->category; ?></a></span>  
+            <h2> <?php echo $data[0]->title; ?> <span class='full-time'><?php echo $data[0]->opening_date; ?></span></h2>";	
 		</div>
 
 		<div class="six columns">
-			<a href="#" class="button white"><i class="fa fa-star"></i> Bookmark This Job</a>
+			<a href="#" class="button white"><i class="fa fa-star"></i> <?php echo $data[0]->poya_date; ?></a>
 		</div>
 
 	</div>
