@@ -36,12 +36,16 @@ class Dansel extends BaseController
             'description' => 'required|min_length[30]|max_length[5000]',
             'organizing_team' => 'required|min_length[3]|max_length[100]',
             'organizing_number' => 'required|min_length[10]|max_length[20]',
-            'image' => 'max_size[image,5096]',
+            'banner' => ['uploaded[banner]','mime_in[banner,image/jpg,image/jpeg,image/gif,image/png]','max_size[banner,4096]',],
         ])) {
             return view('Dansel/add', [
                 'validation' => $this->validator,
             ]);
         } else {
+
+            $file = $this->request->getFile('banner');
+            $newName = $file->getRandomName();
+
             $dansel->save([
                 'name' => $this->request->getVar('title'),
                 'address' => $this->request->getVar('address'),
@@ -57,8 +61,11 @@ class Dansel extends BaseController
                 'description' => $this->request->getVar('description'),
                 'organizing_team' => $this->request->getVar('organizing_team'),
                 'organizing_number' => $this->request->getVar('organizing_number'),
-                'image' => $this->request->getVar('image'),
+                'image' => $newName,
             ]);
+
+            
+            $file->move(WRITEPATH.'/uploads', $newName);
             return redirect()->to('/');
 
         }

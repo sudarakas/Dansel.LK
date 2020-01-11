@@ -337,7 +337,7 @@
                         <div class="form">
                             <h5>Banner <span>(optional)</span></h5>
                             <label class="upload-btn">
-                                <input type="file" name="image" id="file-input"/>
+                                <input type="file" name="banner" id="file-input"/>
                                 <i class="fa fa-upload"></i> Browse
                             </label>
                             <span class="fake-input" id="file-name">No file selected</span>
