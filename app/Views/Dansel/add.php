@@ -56,7 +56,7 @@
                         <div class="notification notice closeable margin-bottom-40">
                             <p><span>Have an account?</span> If you don’t have an account you can create one below by entering your email address. A password will be automatically emailed to you.</p>
                         </div>
-                    <form action="/dansel/store" method="post">
+                    <form action="/dansel/store" method="post" enctype="multipart/form-data">
                         <!-- Email -->
                         <div class="form">
                             <h5>Title</h5>

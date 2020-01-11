@@ -36,6 +36,7 @@ class Dansel extends BaseController
             'description' => 'required|min_length[30]|max_length[5000]',
             'organizing_team' => 'required|min_length[3]|max_length[100]',
             'organizing_number' => 'required|min_length[10]|max_length[20]',
+            'image' => 'max_size[image,5096]',
         ])) {
             return view('Dansel/add', [
                 'validation' => $this->validator,
