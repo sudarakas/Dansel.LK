@@ -72,6 +72,20 @@ class Dansel extends BaseController
         }
     }
 
+    public function showViewPage($id)
+    {
+        echo $id;
+
+    }
+
+    public function deleteDansel($id)
+    {
+        $db  = \Config\Database::connect();
+        $dansel = $db->table('dansels');
+        $dansel->where('id', $id);
+        $dansel->delete();
+    }
+
     //--------------------------------------------------------------------
 
 }
