@@ -16,11 +16,10 @@ class Dansel extends BaseController
 
     public function storeDansel()
     {
-        helper('form');
-        $dansel = new DanselModel();
-
         helper(['form', 'url']);
-
+        helper('alerts');
+        $dansel = new DanselModel();
+  
         if (!$this->validate([
             'title' => 'required|min_length[3]|max_length[255]',
             'address' => 'required|min_length[3]|max_length[1000]',
@@ -66,7 +65,7 @@ class Dansel extends BaseController
 
             //store file in writable->uploads->images
             $file->store('images', $randomImageName);
-            
+            alert('success', "Your dansela has been successfully added!");
             return redirect()->to('/');
 
         }
@@ -80,10 +79,16 @@ class Dansel extends BaseController
 
     public function deleteDansel($id)
     {
+        helper('alerts');
+
         $db  = \Config\Database::connect();
         $dansel = $db->table('dansels');
         $dansel->where('id', $id);
         $dansel->delete();
+
+        alert('danger', "Your dansela has been successfully deleted!");
+        return redirect()->to('/');
+
     }
 
     //--------------------------------------------------------------------
