@@ -36,7 +36,9 @@
 
 <!-- Titlebar
 ================================================== -->
-<div id="titlebar" class="photo-bg" style='background: url(<?php echo base_url('uploads/images/'.$data[0]->image); ?>)'>
+<div id="titlebar" class="photo-bg" style='background: url(<?php $path='';
+ echo (WRITEPATH.'uploads\images\\'.$data[0]->image);
+ ?>)'>
 	<div class="container">
 		<div class="ten columns">
 			<span>
@@ -47,7 +49,7 @@
 		<div class="six columns">
 			<a href="#" class="button white"><i class="fa fa-star"></i> <?php echo $data[0]->poya_date; ?></a>
 		</div>
-
+	
 	</div>
 </div>
 
@@ -64,41 +66,17 @@
 		<div class="company-info">
 			<img src="images/company-logo.png" alt="">
 			<div class="content">
-				<h4>King LLC</h4>
-				<span><a href="#"><i class="fa fa-link"></i> Website</a></span>
-				<span><a href="#"><i class="fa fa-twitter"></i> @kingrestaurants</a></span>
+				<h4><?php echo $data[0]->title; ?></h4>
+				<span><a href="#"><i class="fa fa-link"></i><?php echo $data[0]->category; ?></a></span>
+				<span><a href="#"><i class="fa fa-twitter"></i> @<?php echo $data[0]->city; ?></a></span>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 
 		<p class="margin-reset">
-			The Food Service Specialist ensures outstanding customer service is provided to food customers and that all food offerings meet the required stock levels and presentation standards. Beginning your career as a Food Steward will give you a strong foundation in Speedway’s food segment that can make you a vital member of the front line team!
+		<?php echo $data[0]->description; ?>
 		</p>
-
 		<br>
-		<p>The <strong>Food Service Specialist</strong> will have responsibilities that include:</p>
-
-		<ul class="list-1">
-			<li>Executing the Food Service program, including preparing and presenting our wonderful food offerings
-			to hungry customers on the go!
-			</li>
-			<li>Greeting customers in a friendly manner and suggestive selling and sampling items to help increase sales.</li>
-			<li>Keeping our Store food area looking terrific and ready for our valued customers by managing product 
-			inventory, stocking, cleaning, etc.</li>
-			<li>We’re looking for associates who enjoy interacting with people and working in a fast-paced environment!</li>
-		</ul>
-		
-		<br>
-
-		<h4 class="margin-bottom-10">Job Requirment</h4>
-
-		<ul class="list-1">
-			<li>Excellent customer service skills, communication skills, and a happy, smiling attitude are essential.</li>
-			<li>Must be available to work required shifts including weekends, evenings and holidays.</li>
-			<li>Must be able to perform repeated bending, standing and reaching.</li>
-			<li> Must be able to occasionally lift up to 50 pounds</li>
-		</ul>
-
 	</div>
 	</div>
 
@@ -117,34 +95,36 @@
 						<i class="fa fa-map-marker"></i>
 						<div>
 							<strong>Location:</strong>
-							<span>20180 Outer Dr Dearborn, MI 48124</span>
+							<span><?php echo $data[0]->address; ?></span>
 						</div>
 					</li>
 					<li>
 						<i class="fa fa-user"></i>
 						<div>
-							<strong>Job Title:</strong>
-							<span>Food Service Specialist</span>
+							<strong>Organizing Team:</strong>
+							<span><?php echo $data[0]->organizing_team; ?></span>
+							<span><?php echo $data[0]->organizing_number; ?></span>
 						</div>
 					</li>
 					<li>
 						<i class="fa fa-clock-o"></i>
 						<div>
 							<strong>Hours:</strong>
-							<span>40h / week</span>
+							<span>From: <?php echo $data[0]->opening_time; ?></span>
+							<span>To: <?php echo $data[0]->end_time; ?></span>
 						</div>
 					</li>
 					<li>
 						<i class="fa fa-money"></i>
 						<div>
-							<strong>Rate:</strong>
-							<span>$9.50 - $12.50 / hour</span>
+							<strong>Category:</strong>
+							<span><?php echo $data[0]->category; ?></span>
 						</div>
 					</li>
 				</ul>
 
 
-				<a href="#small-dialog" class="popup-with-zoom-anim button">Apply For This Job</a>
+				<a href="#small-dialog" class="popup-with-zoom-anim button">Set Direction</a>
 
 				<div id="small-dialog" class="zoom-anim-dialog mfp-hide apply-popup">
 					<div class="small-dialog-headline">

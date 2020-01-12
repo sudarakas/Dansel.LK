@@ -67,6 +67,8 @@ class Dansel extends BaseController
 
             //store file in writable->uploads->images
             $file->store('images', $randomImageName);
+            //$file->move(base_url('uploads/'), $randomImageName);
+    
             alert('success', "Your dansela has been successfully added!");
             return redirect()->to('/');
 
