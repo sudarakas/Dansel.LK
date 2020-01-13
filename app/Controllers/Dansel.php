@@ -78,14 +78,29 @@ class Dansel extends BaseController
     public function showViewPage($id)
     {
         
-        $db  = \Config\Database::connect();
-        $dansel = $db->table('dansels')->where('id', $id)->get();
-        $dansel=$dansel->getResult();
-        return view('Dansel/view',['data'=>$dansel]);
-
+        // $db  = \Config\Database::connect();
+        // $dansel = $db->table('dansels')->where('id', $id)->get();
+        // $dansel=$dansel->getResult();
+        // return view('Dansel/view',['data'=>$dansel]);
         
+        //Using Model
+        $model = new \App\Models\DanselModel();
+        $dansela = $model->find($id);
+        return view('Dansel/view',['data'=>$dansela]);
 
+    }
 
+    public function viewAllDansel()
+    {
+        
+        $model = new \App\Models\DanselModel();
+        $data = [
+            'users' => $model->paginate(5),
+            'pager' => $model->pager
+        ];
+        
+        return view('Dansel/all', $data);
+        
     }
 
     public function deleteDansel($id)

@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <title><?php
                 
-            echo $data[0]->title;
+            echo $data->title;
                 
             ?>
     </title>
@@ -37,17 +37,17 @@
 <!-- Titlebar
 ================================================== -->
 <div id="titlebar" class="photo-bg" style='background: url(<?php $path='';
- echo (WRITEPATH.'uploads\images\\'.$data[0]->image);
+ echo (WRITEPATH.'uploads\images\\'.$data->image);
  ?>)'>
 	<div class="container">
 		<div class="ten columns">
 			<span>
-        <a href="browse-jobs.html"><?php echo $data[0]->category; ?></a></span>  
-            <h2> <?php echo $data[0]->title; ?> <span class='full-time'><?php echo $data[0]->opening_date; ?></span></h2>";	
+        <a href="browse-jobs.html"><?php echo $data->category; ?></a></span>  
+            <h2> <?php echo $data->title; ?> <span class='full-time'><?php echo $data->opening_date; ?></span></h2>";	
 		</div>
 
 		<div class="six columns">
-			<a href="#" class="button white"><i class="fa fa-star"></i> <?php echo $data[0]->poya_date; ?></a>
+			<a href="#" class="button white"><i class="fa fa-star"></i> <?php echo $data->poya_date; ?></a>
 		</div>
 	
 	</div>
@@ -66,15 +66,15 @@
 		<div class="company-info">
 			<img src="images/company-logo.png" alt="">
 			<div class="content">
-				<h4><?php echo $data[0]->title; ?></h4>
-				<span><a href="#"><i class="fa fa-link"></i><?php echo $data[0]->category; ?></a></span>
-				<span><a href="#"><i class="fa fa-twitter"></i> @<?php echo $data[0]->city; ?></a></span>
+				<h4><?php echo $data->title; ?></h4>
+				<span><a href="#"><i class="fa fa-link"></i><?php echo $data->category; ?></a></span>
+				<span><a href="#"><i class="fa fa-twitter"></i> @<?php echo $data->city; ?></a></span>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 
 		<p class="margin-reset">
-		<?php echo $data[0]->description; ?>
+		<?php echo $data->description; ?>
 		</p>
 		<br>
 	</div>
@@ -95,30 +95,30 @@
 						<i class="fa fa-map-marker"></i>
 						<div>
 							<strong>Location:</strong>
-							<span><?php echo $data[0]->address; ?></span>
+							<span><?php echo $data->address; ?></span>
 						</div>
 					</li>
 					<li>
 						<i class="fa fa-user"></i>
 						<div>
 							<strong>Organizing Team:</strong>
-							<span><?php echo $data[0]->organizing_team; ?></span>
-							<span><?php echo $data[0]->organizing_number; ?></span>
+							<span><?php echo $data->organizing_team; ?></span>
+							<span><?php echo $data->organizing_number; ?></span>
 						</div>
 					</li>
 					<li>
 						<i class="fa fa-clock-o"></i>
 						<div>
 							<strong>Hours:</strong>
-							<span>From: <?php echo $data[0]->opening_time; ?></span>
-							<span>To: <?php echo $data[0]->end_time; ?></span>
+							<span>From: <?php echo $data->opening_time; ?></span>
+							<span>To: <?php echo $data->end_time; ?></span>
 						</div>
 					</li>
 					<li>
 						<i class="fa fa-money"></i>
 						<div>
 							<strong>Category:</strong>
-							<span><?php echo $data[0]->category; ?></span>
+							<span><?php echo $data->category; ?></span>
 						</div>
 					</li>
 				</ul>
