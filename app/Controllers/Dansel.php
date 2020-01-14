@@ -103,6 +103,16 @@ class Dansel extends BaseController
         
     }
 
+    public function searchDansel()
+    {
+        $model = new \App\Models\DanselModel();
+        $users = $model->where('title','LIKE', $this->request->getVar('search'))
+                   ->findAll();
+
+        return dd($users);
+
+    }
+
     public function deleteDansel($id)
     {
         helper('alerts');

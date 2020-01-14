@@ -85,6 +85,7 @@ $routes->get('/dansel/all', 'Dansel::viewAllDansel');
 $routes->get('/dansel/edit/(:id)', 'Dansel::showEditPage/$1');
 $routes->get('/dansel/delete/(:num)', 'Dansel::deleteDansel/$1');
 $routes->get('/dansel/(:num)', 'Dansel::showViewPage/$1');
+$routes->post('/dansel/search', 'Dansel::searchDansel');
 
 
 

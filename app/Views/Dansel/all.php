@@ -48,9 +48,9 @@
 	<div class="eleven columns">
 	<div class="padding-right">
 		
-		<form action="#" method="get" class="list-search">
-			<button><i class="fa fa-search"></i></button>
-			<input type="text" placeholder="job title, keywords or company name" value=""/>
+		<form action="/dansel/search" method="post" class="list-search">
+			<button type="submit"><i class="fa fa-search"></i></button>
+			<input type="text" name="search" placeholder="Keyword, City or Poya Day" value=""/>
 			<div class="clearfix"></div>
 		</form>
 
@@ -60,20 +60,18 @@
                 echo "<li><a href='job-page.html'>
                 <img src='images/job-list-logo-01.png' alt=''>
                 <div class='job-list-content'>
-                    <h4>Marketing Coordinator - SEO / SEM Experience <span class='full-time'>Full-Time</span></h4>
+                    <h4>$record->title</span></h4>
                     <div class='job-icons'>
-                        <span><i class='fa fa-briefcase'></i> King</span>
-                        <span><i class='fa fa-map-marker'></i> Sydney</span>
-                        <span><i class='fa fa-money'></i> $100 / hour</span>
+                        <span><i class='fa fa-briefcase'></i> $record->poya_date</span>
+                        <span><i class='fa fa-map-marker'></i> $record->city</span>
+                        <span><i class='fa fa-money'></i> $record->opening_time</span>
                     </div>
                     <p>The SEO/SEM Specialist will work with industry leaders and top retailers to define and deliver best practices through innovative SEO methodologies.</p>
                 </div>
                 </a>
                 <div class='clearfix'></div>
             </li>";
-               }
-                    
-                        
+               }        
             ?>
 
 			
