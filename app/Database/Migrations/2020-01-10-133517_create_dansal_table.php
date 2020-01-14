@@ -21,6 +21,7 @@ class CreateDanselTables extends Migration
          */
         $fields = [
             'title' => ['type' => 'varchar', 'constraint' => 255],
+            'user_id' => ['type' => 'int', 'constraint' => 9],
             'address' => ['type' => 'varchar', 'constraint' => 255],
             'city' => ['type' => 'varchar', 'constraint' => 50],
             'location_lat' => ['type' => 'varchar', 'constraint' => 50],
