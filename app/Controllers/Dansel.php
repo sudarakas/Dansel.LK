@@ -11,7 +11,11 @@ class Dansel extends BaseController
 
     public function showEditPage($id)
     {
-        return view('Dansel/edit');
+        
+        $model = new \App\Models\DanselModel();
+        $dansela = $model->find($id);
+        return view('Dansel/edit',['data'=>$dansela]);
+        
     }
 
     public function storeDansel()
@@ -106,10 +110,15 @@ class Dansel extends BaseController
     public function searchDansel()
     {
         $model = new \App\Models\DanselModel();
-        $users = $model->where('title','LIKE', $this->request->getVar('search'))
-                   ->findAll();
+      //  $users = $model->or_like('title', $this->request->getVar('search'))->get();
 
-        return dd($users);
+        $db  = \Config\Database::connect();
+        $dansel = $db->table('dansels');
+        $dansel = $db->like('title', $this->request->getVar('search'));
+        $dansel = $db->or_like('poya_date', $this->request->getVar('search'));
+        $query = $dansel->get();
+
+        return dd($query);
 
     }
 

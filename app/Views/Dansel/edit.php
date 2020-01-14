@@ -56,19 +56,20 @@
                         <!-- Email -->
                         <div class="form">
                             <h5>Name</h5>
-                            <input class="search-field" type="text" placeholder="Name" value="" />
+                            <input class="search-field" type="text" placeholder="Name" value='<?php echo $data->title; ?>'/>
                         </div>
 
                         <!-- Title -->
                         <div class="form">
                             <h5>Address</h5>
-                            <input class="search-field" type="text" placeholder="Address" value="" />
+                            <input class="search-field" type="text" placeholder="Address" value="<?php echo $data->address; ?>" />
                         </div>
 
                         <!-- Location -->
                         <div class="form">
                             <h5>City</h5>
                             <select data-placeholder="Full-Time" class="chosen-select">
+                                <option><?php echo $data->city; ?></option>
                                 <option>Ambalangoda</option>
                                 <option>Ampara</option>
                                 <option>Anuradhapura</option>
@@ -147,44 +148,45 @@
 
                         <div class="form">
                             <h5>Opening Date</h5>
-                            <input data-role="date" type="text" placeholder="YYYY-MM-DD">
+                            <input data-role="date" type="text" placeholder="YYYY-MM-DD" value='<?php echo $data->opening_date; ?>'>
                         </div>
 
                         <div class="form">
                             <div class="select">
                                 <h5>Poya Day</h5>
                                 <select data-placeholder="Choose Categories" class="chosen-select">
-                                    <option value="1">Duruthu Poya</option>
-                                    <option value="2">Navam Poya</option>
-                                    <option value="3">Medin Poya</option>
-                                    <option value="4">Bak Poya</option>
-                                    <option value="5">Vesak Poya</option>
-                                    <option value="6">Poson Poya</option>
-                                    <option value="7">Esala Poya</option>
-                                    <option value="8">Nikini Poya</option>
-                                    <option value="9">Binara Poya</option>
-                                    <option value="10">Vap Poya</option>
-                                    <option value="11">Il Poya</option>
-                                    <option value="12">Unduvap Poya</option>
-                                    <option value="13">Other</option>
+                                    <option><?php echo $data->poya_date; ?></option>
+                                    <option>Duruthu Poya</option>
+                                    <option>Navam Poya</option>
+                                    <option>Medin Poya</option>
+                                    <option>Bak Poya</option>
+                                    <option>Vesak Poya</option>
+                                    <option>Poson Poya</option>
+                                    <option>Esala Poya</option>
+                                    <option>Nikini Poya</option>
+                                    <option>Binara Poya</option>
+                                    <option>Vap Poya</option>
+                                    <option>Il Poya</option>
+                                    <option>Unduvap Poya</option>
+                                    <option>Other</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="form">
                             <h5>Opening Time</h5>
-                            <input data-role="time" type="text" placeholder="HH:MM">
+                            <input data-role="time" type="text" placeholder="HH:MM" value='<?php echo $data->opening_time; ?>'>
                         </div>
 
                         <div class="form">
                             <h5>End Time</h5>
-                            <input data-role="time" type="text" placeholder="HH:MM">
+                            <input data-role="time" type="text" placeholder="HH:MM" value='<?php echo $data->end_time; ?>'>
                         </div>
 
                         <!-- Job Type -->
                         <div class="form">
                             <h5>Time</h5>
-                            <input data-role="time" type="text" placeholder="">
+                            <input data-role="time" type="text" placeholder="" value='<?php echo $data->time; ?>'>
                         </div>
 
                         <!-- Choose Category -->
@@ -207,7 +209,7 @@
                         <!-- Description -->
                         <div class="form">
                             <h5>Description</h5>
-                            <textarea class="WYSIWYG" name="summary" cols="40" rows="3" id="summary" spellcheck="true"></textarea>
+                            <textarea class="WYSIWYG" name="summary" cols="40" rows="3" id="summary" spellcheck="true"><?php echo $data->description; ?></textarea>
                         </div>
 
                         <!-- Company Details -->
@@ -217,13 +219,13 @@
                         <!-- Company Name -->
                         <div class="form">
                             <h5>Name</h5>
-                            <input type="text" placeholder="Enter the name">
+                            <input type="text" placeholder="Enter the name" value='<?php echo $data->organizing_team; ?>'>
                         </div>
 
                         <!-- Website -->
                         <div class="form">
                             <h5>Contact Number</span></h5>
-                            <input type="text" placeholder="0XXXXXXXXX">
+                            <input type="text" placeholder="0XXXXXXXXX" value='<?php echo $data->organizing_number; ?>'>
                         </div>
 
                         <!-- Logo -->
@@ -277,12 +279,12 @@
         var map;
             function initAutocomplete() {
                 map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 6.9814435, lng: 81.0741583},
+                center: {lat: <?php echo $data->location_lat; ?>, lng: <?php echo $data->location_lng; ?>},
                 zoom: 15
                 });
 
                 var marker = new google.maps.Marker({
-                position: {lat: 6.9814435, lng: 81.0741583},
+                position: {lat: <?php echo $data->location_lat; ?>, lng: <?php echo $data->location_lng; ?>},
                 map: map,
                 draggable: true,
                 });
