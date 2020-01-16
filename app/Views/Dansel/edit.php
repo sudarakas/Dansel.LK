@@ -223,7 +223,7 @@
 
                         <div class="form">
                             <h5>Opening Time</h5>
-                            <input data-role="time" type="text" placeholder="HH:MM" name="opening_time" value='<?php echo $data->opening_time; ?>'>
+                            <input data-role="time" type="text" placeholder="HH:MM" name="opening_time" value='<?php echo date_format(date_create($data->opening_time),'H:i'); ?>'>
                             <p class='required'>
                             <?php
                                 if(\Config\Services::validation()->hasError('opening_time'))
@@ -236,7 +236,7 @@
 
                         <div class="form">
                             <h5>End Time</h5>
-                            <input data-role="time" type="text" placeholder="HH:MM" name="end_time" value='<?php echo $data->end_time; ?>'>
+                            <input data-role="time" type="text" placeholder="HH:MM" name="end_time" value='<?php echo date_format(date_create($data->end_time),'H:i'); ?>'>
                             <p class='required'>
                             <?php
                                 if(\Config\Services::validation()->hasError('end_time'))
