@@ -83,6 +83,7 @@ $routes->get('/dansel/add', 'Dansel::showAddPage');
 $routes->post('/dansel/store', 'Dansel::storeDansel');
 $routes->get('/dansel/all', 'Dansel::viewAllDansel');
 $routes->get('/dansel/edit/(:num)', 'Dansel::showEditPage/$1');
+$routes->post('/dansel/edit/store', 'Dansel::updateDansel');
 $routes->get('/dansel/delete/(:num)', 'Dansel::deleteDansel/$1');
 $routes->get('/dansel/(:num)', 'Dansel::showViewPage/$1');
 $routes->post('/dansel/search', 'Dansel::searchDansel');
