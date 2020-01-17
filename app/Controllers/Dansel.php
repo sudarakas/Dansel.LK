@@ -6,7 +6,13 @@ class Dansel extends BaseController
 {
     public function showAddPage()
     {
-        return view('Dansel/add');
+        $session = session()->start();
+        if(isset($_SESSION['id'])){
+            return view('Dansel/add');
+        }else{
+            return view('Authentication/login');
+        }
+        
     }
 
     public function showEditPage($id)

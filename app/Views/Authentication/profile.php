@@ -43,7 +43,6 @@
 
 <ul class="tabs-nav">
     <li><a href="/my-account/login"><i class="fa fa-user"></i> Create Your Profile</a></li>
-    <li><a href="/logout"><i class="fa fa-lock"></i> Logout</a></li>
 </ul>
 </div>
 	</div>

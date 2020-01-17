@@ -35,8 +35,16 @@
 
 
 			<ul class="float-right">
-				<li><a href="/my-account#tab2"><i class="fa fa-user"></i> Sign Up</a></li>
-				<li><a href="/my-account"><i class="fa fa-lock"></i> Log In</a></li>
+				<?php
+					$session = session()->start();
+					if(isset($_SESSION['id'])){
+						echo "<li><a href='/logout'><i class='fa fa-user'></i> Log Out</a></li>";
+					}else{
+						echo "<li><a href='/my-account#tab2'><i class='fa fa-user'></i> Sign Up</a></li>
+							  <li><a href='/my-account'><i class='fa fa-lock'></i> Log In</a></li>";	
+					}
+				
+				?>
 			</ul>
 
 		</nav>

@@ -89,33 +89,27 @@ public function post_login()
             $password= $this->request->getVar('password');
                 //Encrypt the password
                 $encrypted_password =  md5($this->request->getVar('password'));
-                //check the model for database operation
-                // $db  = \Config\Database::connect();
-                // $query = $db->table('users')
-                //         ->where('email',$email)
-                //         ->where('password', $encrypted_password);
 
                  $db  = \Config\Database::connect();
-                    $dansel = $db->table('users')
+                    $user = $db->table('users')
                     ->where('email', $email)
                     ->where('password', $encrypted_password)
                     ->get();
                    
-                   $dansel=$dansel->getResult();
+                   $user=$user->getResult();
                     
-                if(count($dansel) == 1){
-                   // $result =$auth->result_array();
-                   // return $result;
-
+                if(count($user) == 1){
+                
                     //start the session
                     helper('session');
                     $session = \Config\Services::session($config);
                     $session = session();
                     $session_data = [
-                        'id' => $dansel[0]->id
+                        'id' => $user[0]->id
                     ];
                     $session->set($session_data);
                     if(isset($_SESSION['id'])){
+                        $session = session()->start();
                         return view('Authentication/dashboard');
                     }
                     else{
