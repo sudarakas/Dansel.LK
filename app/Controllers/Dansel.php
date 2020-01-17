@@ -29,6 +29,8 @@ class Dansel extends BaseController
         helper(['form', 'url']);
         helper('alerts');
         $dansel = new DanselModel();
+
+        $session = session()->start();
   
         if (!$this->validate([
             'title' => 'required|min_length[3]|max_length[255]',
@@ -47,7 +49,7 @@ class Dansel extends BaseController
             'organizing_number' => 'required|min_length[10]|max_length[20]',
             'banner' => ['uploaded[banner]','mime_in[banner,image/jpg,image/jpeg,image/gif,image/png]','max_size[banner,4096]',],
         ])) {
-            return view('Dansel/edit', [
+            return view('Dansel/add', [
                 'validation' => $this->validator,
             ]);
 
@@ -56,9 +58,10 @@ class Dansel extends BaseController
 
             $file = $this->request->getFile('banner');
             $randomImageName = $file->getRandomName();
-
+        
             $dansel->save([
                 'title' => $this->request->getVar('title'),
+                'user_id' => $this->request->getVar('user_id'),
                 'address' => $this->request->getVar('address'),
                 'city' => $this->request->getVar('city'),
                 'location_lat' => $this->request->getVar('location_lat'),

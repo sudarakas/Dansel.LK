@@ -10,7 +10,7 @@ class DanselModel extends Model
     protected $returnType = 'object';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['title', 'address', 'city', 'location_lat',
+    protected $allowedFields = ['title', 'user_id','address', 'city', 'location_lat',
         'location_lng', 'opening_date', 'poya_date', 'opening_time', 'end_time',
         'time', 'category', 'description', 'organizing_team', 'organizing_number', 'image'];
 
