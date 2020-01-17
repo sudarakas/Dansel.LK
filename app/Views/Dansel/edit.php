@@ -266,14 +266,11 @@
                             <div class="select">
                                 <h5>Category</h5>
                                 <select data-placeholder="Choose Categories" name="category" class="chosen-select">
-                                    <option>Web Developers</option>
-                                    <option>Mobile Developers</option>
-                                    <option>Designers & Creatives</option>
-                                    <option>Writers</option>
-                                    <option>Virtual Assistants</option>
-                                    <option>Customer Service Agents</option>
-                                    <option>Sales & Marketing Experts</option>
-                                    <option>Accountants & Consultants</option>
+                                    <option>Food</option>
+                                    <option>Ice Cream</option>
+                                    <option>Beverage</option>
+                                    <option>Pooja Baanda</option>
+                                    <option>Other</option>
                                     <p class='required'>
                             <?php
                                 if(\Config\Services::validation()->hasError('category'))
