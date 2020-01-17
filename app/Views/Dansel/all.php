@@ -56,7 +56,7 @@
 
 		<ul class="job-list full">
             <?php 
-               foreach($users as $record){
+               foreach($dansels as $record){
                 echo "<li><a href='job-page.html'>
                 <img src='images/job-list-logo-01.png' alt=''>
                 <div class='job-list-content'>

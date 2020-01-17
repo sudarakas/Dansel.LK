@@ -89,7 +89,6 @@ $routes->get('/dansel/(:num)', 'Dansel::showViewPage/$1');
 $routes->post('/dansel/search', 'Dansel::searchDansel');
 
 
-
 //Contact Us Route
 $routes->get('/contact-us', 'Contact::showContactUs');
 

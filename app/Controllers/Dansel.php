@@ -105,7 +105,7 @@ class Dansel extends BaseController
             'organizing_number' => 'required|min_length[10]|max_length[20]',
             'banner' => ['uploaded[banner]','mime_in[banner,image/jpg,image/jpeg,image/gif,image/png]','max_size[banner,4096]',],
         ])) {
-            return view('Dansel/add', [
+            return view('Dansel/edit', [
                 'validation' => $this->validator,
             ]);
 
@@ -165,7 +165,7 @@ class Dansel extends BaseController
         
         $model = new \App\Models\DanselModel();
         $data = [
-            'users' => $model->paginate(5),
+            'dansels' => $model->paginate(5),
             'pager' => $model->pager
         ];
         
