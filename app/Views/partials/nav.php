@@ -15,11 +15,11 @@
 				<li><a href="#">Dansel</a></li>
 				<li><a href="#">Categories</a>
 					<ul>
-						<li><a href="browse-jobs.html">Browse Jobs</a></li>
-						<li><a href="browse-categories.html">Browse Categories</a></li>
-						<li><a href="add-resume.html">Add Resume</a></li>
-						<li><a href="manage-resumes.html">Manage Resumes</a></li>
-						<li><a href="job-alerts.html">Job Alerts</a></li>
+						<li><a href="browse-jobs.html">Food</a></li>
+						<li><a href="browse-categories.html">Ice Cream</a></li>
+						<li><a href="add-resume.html">Beverage</a></li>
+						<li><a href="manage-resumes.html">Pooja Baanda</a></li>
+						<li><a href="job-alerts.html">Other</a></li>
 					</ul>
 				</li>
 
