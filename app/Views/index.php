@@ -25,9 +25,10 @@
 
 				<!-- Form -->
 				<h2>Find Dansel</h2>
-				<input type="text" class="ico-01" placeholder="Category" value=""/>
-				<input type="text" class="ico-02" placeholder="City" value=""/>
-				<button><i class="fa fa-search"></i></button>
+				<form action="/dansel/search" method="post">
+				<input type="text" name="search" class="ico-01" placeholder="Keyword, City or Poya Day"/>
+				<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
 
 				<!-- Browse Jobs -->
 				<div class="browse-jobs">
