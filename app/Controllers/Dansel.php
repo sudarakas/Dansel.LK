@@ -185,11 +185,26 @@ class Dansel extends BaseController
     public function searchDansel()
     {
 
-        $db = \Config\Database::connect();
-        $builder = $db->table('dansels');
-        $users = $builder->like('title', $this->request->getVar('search'))->orLike('poya_date', $this->request->getVar('search'))->get();
+        $model = new \App\Models\DanselModel();
+        $data = [
+            'dansels' => $model->like('title', $this->request->getVar('search'))->orLike('poya_date', $this->request->getVar('search'))->paginate(5),
+            'pager' => $model->pager
+        ];
+        
+        return view('Dansel/all', $data);
 
-        return dd($users);
+    }
+
+    public function sortCategoryDansel($category)
+    {
+
+        $model = new \App\Models\DanselModel();
+        $data = [
+            'dansels' => $model->like('category', $category)->paginate(5),
+            'pager' => $model->pager
+        ];
+        
+        return view('Dansel/all', $data);
 
     }
 

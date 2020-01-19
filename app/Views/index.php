@@ -55,16 +55,16 @@
 	<div class="sixteen columns">
 		<h3 class="margin-bottom-25">Popular Categories</h3>
 		<ul id="popular-categories">
-			<li><a href="#"><i class="fa fa-line-chart"></i> Accounting / Finance</a></li>
-			<li><a href="#"><i class="fa fa-wrench"></i> Automotive Jobs</a></li>
-			<li><a href="#"><i class="fa fa-building-o"></i> Construction / Facilities</a></li>
-			<li><a href="#"><i class="fa fa-graduation-cap"></i> Education Training</a></li>
+			<li><a href="/dansel/all/food"><i class="fa fa-cutlery"></i>Food</a></li>
+			<li><a href="/dansel/all/ice"><i class="fa fa-yelp"></i>Ice Cream</a></li>
+			<li><a href="/dansel/all/beverage"><i class="fa fa-coffee"></i>Beverage</a></li>
+			<li><a href="/dansel/all/pooja"><i class="fa fa-bullseye"></i>Pooja Baanda</a></li>
 		</ul>
 
 		<div class="clearfix"></div>
 		<div class="margin-top-30"></div>
 
-		<a href="browse-categories.html" class="button centered">Browse All Categories</a>
+		<a href="/dansel/all" class="button centered">Browse All</a>
 		<div class="margin-bottom-50"></div>
 	</div>
 </div>
