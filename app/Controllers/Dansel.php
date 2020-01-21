@@ -11,11 +11,24 @@ class Dansel extends BaseController
     }
 
     public function showEditPage( $id )
- {
+    {
 
-        $model = new \App\Models\DanselModel();
-        $dansela = $model->find( $id );
+
+    helper( 'alerts' );
+    $session = \Config\Services::session($config);
+    $danselModel = new \App\Models\DanselModel();
+    $userModel = new \App\Models\AuthenticationModel();
+    
+    $user = $userModel->find($session->get('id'));
+    $dansel = $danselModel->find($id);
+
+    if($user->id != $dansel->user_id){
+        alert( 'danger', 'Permission Denied!' );
+        return redirect()->to( '/' );
+    }else{
+        $dansela = $danselModel->find( $id );
         return view( 'Dansel/edit', ['data'=>$dansela] );
+    }
 
     }
 
@@ -151,12 +164,7 @@ class Dansel extends BaseController
     public function showViewPage( $id )
  {
 
-        // $db  = \Config\Database::connect();
-        // $dansel = $db->table( 'dansels' )->where( 'id', $id )->get();
-        // $dansel = $dansel->getResult();
-        // return view( 'Dansel/view', ['data'=>$dansel] );
-
-        //Using Model
+    //Using Model
         $model = new \App\Models\DanselModel();
         $dansela = $model->find( $id );
         return view( 'Dansel/view', ['data'=>$dansela] );
@@ -205,17 +213,21 @@ class Dansel extends BaseController
     public function deleteDansel( $id )
  {
         helper( 'alerts' );
+        
+        $session = \Config\Services::session($config);
+        $danselModel = new \App\Models\DanselModel();
+        $userModel = new \App\Models\AuthenticationModel();
+        
+        $user = $userModel->find($session->get('id'));
+        $dansel = $danselModel->find($id);
 
-        // $db  = \Config\Database::connect();
-        // $dansel = $db->table( 'dansels' );
-        // $dansel->where( 'id', $id );
-        // $dansel->delete();
+        if($user->id != $dansel->user_id){
+            alert( 'danger', 'Permission Denied!' );
+        }else{
+            $danselModel->where('id', $id)->delete();;
+            alert( 'danger', 'Your dansela has been successfully deleted!' );
+        }
 
-        $model = new \App\Models\DanselModel();
-        $model->delete($id);
-
-
-        alert( 'danger', 'Your dansela has been successfully deleted!' );
         return redirect()->to( '/' );
 
     }
