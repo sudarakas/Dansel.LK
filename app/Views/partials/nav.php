@@ -4,7 +4,7 @@
 
 		<!-- Logo -->
 		<div id="logo">
-			<h1><a href="/"><img src="images/logo.png" alt="Work Scout" /></a></h1>
+			<h1><a href="/"><img src="/images/logo.png" alt="Work Scout" /></a></h1>
 		</div>
 
 		<!-- Menu -->
@@ -15,19 +15,15 @@
 				<li><a href="#">Dansel</a></li>
 				<li><a href="#">Categories</a>
 					<ul>
-						<li><a href="browse-jobs.html">Food</a></li>
-						<li><a href="browse-categories.html">Ice Cream</a></li>
-						<li><a href="add-resume.html">Beverage</a></li>
-						<li><a href="manage-resumes.html">Pooja Baanda</a></li>
-						<li><a href="job-alerts.html">Other</a></li>
+						<li><a href="/dansel/all/food">Food</a></li>
+						<li><a href="/dansel/all/ice">Ice Cream</a></li>
+						<li><a href="/dansel/all/beverage">Beverage</a></li>
+						<li><a href="/dansel/all/pooja">Pooja Baanda</a></li>
+						<li><a href="/dansel/all/other">Other</a></li>
 					</ul>
 				</li>
 
 				<li><a href="#">About Us</a>
-					<ul>
-						<li><a href="/dansel/add">Services</a></li>
-						<li><a href="manage-jobs.html">About</a></li>
-					</ul>
 				</li>
 
 				<li><a href="/contact-us">Contact Us</a></li>
@@ -38,10 +34,11 @@
 				<?php
 					$session = session()->start();
 					if(isset($_SESSION['id'])){
-						echo "<li><a href='/logout'><i class='fa fa-user'></i> Log Out</a></li>";
+						echo "<li><a href='/dansel/add'><i class='fa fa-cutlery'></i> Add Dansel</a></li>
+								<li><a href='/logout'><i class='fa fa-user'></i> Log Out</a></li>";
 					}else{
-						echo "<li><a href='/my-account#tab2'><i class='fa fa-user'></i> Sign Up</a></li>
-							  <li><a href='/my-account'><i class='fa fa-lock'></i> Log In</a></li>";	
+						echo "<li><a href='/my-account/registration'><i class='fa fa-user'></i> Sign Up</a></li>
+							  <li><a href='/my-account/login'><i class='fa fa-lock'></i> Log In</a></li>";	
 					}
 				?>
 			</ul>

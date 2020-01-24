@@ -49,12 +49,6 @@
 <div class="container">
 
 	<div class="my-account">
-
-		<ul class="tabs-nav">
-			<li class=""><a href="/my-account/login">Login</a></li>
-			<li><a href="/my-account/registration">Register</a></li>
-		</ul>
-
 		<div class="tabs-container">
         <!-- Register -->
 				<div class="tab-content" id="tab2" style="display: none;">

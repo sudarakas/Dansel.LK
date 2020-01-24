@@ -75,9 +75,6 @@ $routes->setAutoRoute(true);
 //Basic Routes
 $routes->get( '/', 'Home::index' );
 
-//Login & Registration Routes
-$routes->get( '/my-account', 'Authentication::showLoginPage');
-
 //Dansel Routes
 $routes->get( '/dansel/add', 'Dansel::showAddPage', ['filter' => 'sessioncheck'] );
 $routes->post( '/dansel/store', 'Dansel::storeDansel',['filter' => 'sessioncheck']);

@@ -8,8 +8,8 @@
 
 		<div class="seven columns">
 			<h4>About</h4>
-			<p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
-			<a href="#" class="button">Get Started</a>
+			<p>We host your contribution and hard work. Add your dansela now!.</p>
+			<a href="#" class="button">Get Register</a>
 		</div>
 
 		<div class="three columns">

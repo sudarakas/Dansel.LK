@@ -78,16 +78,18 @@
 		<ul class="job-list">
 		<?php 
                foreach($data as $record){
-                echo "<li><a href='job-page.html'>
+                echo "<li><a href='/dansel/$record->id'>
                 <img src='images/job-list-logo-01.png' alt=''>
                 <div class='job-list-content'>
                     <h4>$record->title</span></h4>
                     <div class='job-icons'>
-                        <span><i class='fa fa-briefcase'></i> $record->poya_date</span>
+                        <span><i class='fa fa-cutlery'></i> $record->poya_date</span>
                         <span><i class='fa fa-map-marker'></i> $record->city</span>
                         <span><i class='fa fa-money'></i> $record->opening_time</span>
                     </div>
-                    <p>The SEO/SEM Specialist will work with industry leaders and top retailers to define and deliver best practices through innovative SEO methodologies.</p>
+					<p>";
+				echo substr($record->description,0,150);
+				echo "</p>
                 </div>
                 </a>
                 <div class='clearfix'></div>
@@ -175,57 +177,32 @@
 <!-- Recent Posts -->
 <div class="container">
 	<div class="sixteen columns">
-		<h3 class="margin-bottom-25">Recently Added Dansel</h3>
+		<h3 class="margin-bottom-25">Most Popular Dansel</h3>
 	</div>
+	
 
+<?php 
+foreach($top as $record){
+	echo "<div class='one-third column'>
 
-	<div class="one-third column">
-
-		<!-- Post #1 -->
-		<div class="recent-post">
-			<div class="recent-post-img"><a href="blog-single-post.html"><img src="images/recent-post-01.jpg" alt=""></a><div class="hover-icon"></div></div>
-			<a href="blog-single-post.html"><h4>Hey Job Seeker, It’s Time To Get Up And Get Hired</h4></a>
-			<div class="meta-tags">
-				<span>October 10, 2015</span>
-				<span><a href="#">0 Comments</a></span>
-			</div>
-			<p>The world of job seeking can be all consuming. From secretly stalking the open reqs page of your dream company to sending endless applications.</p>
-			<a href="blog-single-post.html" class="button">Read More</a>
+	<!-- Post #1 -->
+	<div class='recent-post'>
+		<div class='recent-post-img'><a href='/dansel/$record->id'><img src='images/recent-post-01.jpg' alt=''></a><div class='hover-icon'></div></div>
+		<a href='/dansel/$record->id'><h4>$record->title</h4></a>
+		<div class='meta-tags'>
+			<span>$record->opening_time</span>
+			<span><a href='#'>$record->time Time</a></span>
 		</div>
-
+		<p>";
+	echo substr($record->description,0,250);
+	echo "</p>
+		<a href='/dansel/$record->id' class='button'>Read More</a>
 	</div>
 
-
-	<div class="one-third column">
-
-		<!-- Post #2 -->
-		<div class="recent-post">
-			<div class="recent-post-img"><a href="blog-single-post.html"><img src="images/recent-post-02.jpg" alt=""></a><div class="hover-icon"></div></div>
-			<a href="blog-single-post.html"><h4>How to "Woo" a Recruiter and Land Your Dream Job</h4></a>
-			<div class="meta-tags">
-				<span>September 12, 2015</span>
-				<span><a href="#">0 Comments</a></span>
-			</div>
-			<p>Struggling to find your significant other the perfect Valentine’s Day gift? If I may make a suggestion: woo a recruiter. </p>
-			<a href="blog-single-post.html" class="button">Read More</a>
-		</div>
-
-	</div>
-
-	<div class="one-third column">
-
-		<!-- Post #3 -->
-		<div class="recent-post">
-			<div class="recent-post-img"><a href="blog-single-post.html"><img src="images/recent-post-03.jpg" alt=""></a><div class="hover-icon"></div></div>
-			<a href="blog-single-post.html"><h4>11 Tips to Help You Get New Clients Through Cold Calling</h4></a>
-			<div class="meta-tags">
-				<span>August 27, 2015</span>
-				<span><a href="#">0 Comments</a></span>
-			</div>
-			<p>If your dream employer appears on this list, you’re certainly in good company. But it also means you’re up for some intense competition.</p>
-			<a href="blog-single-post.html" class="button">Read More</a>
-		</div>
-	</div>
+</div>";
+}
+?>
+	
 
 </div>
 <?=$this->include('partials/footer')?>

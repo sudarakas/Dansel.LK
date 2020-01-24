@@ -5,7 +5,8 @@ class Home extends BaseController {
 
         $model = new \App\Models\DanselModel();
         $dansela = $model->orderBy( 'id', 'DESC' )->limit( 5 )->findAll();
-        return view( 'index', ['data'=>$dansela] );
+        $danselaTop = $model->orderBy( 'time', 'DESC' )->limit(3)->findAll();
+        return view( 'index', ['data'=>$dansela, 'top'=>$danselaTop] );
     }
 
     //--------------------------------------------------------------------
