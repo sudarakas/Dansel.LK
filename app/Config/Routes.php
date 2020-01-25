@@ -89,6 +89,7 @@ $routes->post( '/dansel/search', 'Dansel::searchDansel');
 //Authentication
 $routes->get( '/my-account/login', 'Authentication::showLoginPage', ['as' => 'login'] );
 $routes->post( '/auth/login', 'Authentication::post_login');
+$routes->get( '/my-account/dashboard', 'Authentication::showDashboardPage',['filter' => 'sessioncheck']);
 $routes->get( '/my-account/profile', 'Authentication::showUserprofilePage',['filter' => 'sessioncheck']);
 $routes->post( '/my-account/createprofile', 'Authentication::editProfile',['filter' => 'sessioncheck']);
 $routes->get( '/my-account/registration', 'Authentication::showRegistrationPage');
