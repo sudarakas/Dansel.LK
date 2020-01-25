@@ -16,7 +16,21 @@ class Authentication extends BaseController
 
     public function showUserprofilePage()
  {
-        return view( 'Authentication/profile' );
+        $session = \Config\Services::session($config);
+        $userModel = new \App\Models\AuthenticationModel();
+
+        $user = $userModel->find($session->get('id'));
+        return view( 'Authentication/profile',['data' => $user]);
+    }
+
+    public function showDashboardPage()
+    {
+        $model = new \App\Models\DanselModel();
+		$session = \Config\Services::session($config);
+		$data = [
+			'dansels' => $model->where('user_id', $session->get('id'))->findAll()
+		];
+        return view('Authentication/dashboard',$data);
     }
 
     public function post_login()
@@ -64,7 +78,7 @@ class Authentication extends BaseController
                 $session->set( $session_data );
                 if ( isset( $_SESSION['id'] ) ) {
                     $session = session()->start();
-                    return view( 'Authentication/dashboard' );
+                    return redirect()->to( '/my-account/dashboard' );
                 } else {
                     alert( 'warning', 'Something went wrong!' );
                     return redirect()->back( '/my-account/login' );
@@ -107,46 +121,43 @@ class Authentication extends BaseController
         }
     }
 
-    public function editProfile( $id )
+    public function editProfile()
  {
+    helper('alerts');
+    helper(['form', 'url']);
 
-        if ( isset( $_SESSION['id'] ) ) {
-            helper( 'form' );
-            helper( 'alerts' );
-            helper( ['form', 'url'] );
-            $auth = new AuthenticationModel();
+    $session = \Config\Services::session($config);
+	$userModel = new \App\Models\AuthenticationModel();
 
-            if ( !$this->validate( [
-                'fname'        => 'required',
-                'lname'     => 'required',
-                'province' => 'required',
-                'district'        => 'required',
-                'phone'     => 'required',
-                'username' => 'required',
+    $userId = $this->request->getVar('id');
 
-            ] ) ) {
-                return view( 'Authentication/profile', [
-                    'validation' => $this->validator,
-                ] );
-            } else {
-                $data = [
-                    $this->request->getVar( 'fname' ),
-                    $this->request->getVar( 'lname' ),
-                    $this->request->getVar( 'province' ),
-                    $this->request->getVar( 'district' ),
-                    $this->request->getVar( 'phone' ),
-                    $this->request->getVar( 'username' ),
-                ];
+    if($userId == $session->get('id')){
+        if (!$this->validate([
+            'first_name' => 'required|min_length[3]|max_length[255]',
+            'last_name'  => 'required|min_length[3]|max_length[255]',
+            'phone_no'   => 'required',
+        ])) {
+            return view('Authentication/profile', [
+                'validation' => $this->validator,
+            ]);
+        }else {
+            $data = [
+                'first_name' => $this->request->getVar('first_name'),
+                'last_name' => $this->request->getVar('last_name'),
+                'phone_no' => $this->request->getVar('phone_no'),
+            ];    
+            $userModel->update($userId, $data);
 
-                $db  = \Config\Database::connect();
-                $auth = $db->update( 'users', $data )->where( 'id', $id )->get();
-                // $dansel = $dansel->getResult();
-                return view( 'Authentication/dashboard' );
-            }
-        } else {
-            return redirect()->to( '/' );
+            alert('success', "Your user account has been successfully updated!");
+            return redirect()->to('/my-account/dashboard');
         }
+    }else{
+        alert('warning', "Permission Denied!");
+            return view('Authentication/dashboard');
+    }
+            
 
+        
     }
 
     public function logout() {

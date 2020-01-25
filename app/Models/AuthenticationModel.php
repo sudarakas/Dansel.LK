@@ -11,9 +11,7 @@ class AuthenticationModel extends Model
     protected $returnType = 'object';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['fname', 'lname', 'email', 'province',
-        'district', 'phone', 'username', 'password'];
-
+    protected $allowedFields = ['first_name', 'last_name', 'phone_no', 'email', 'password'];
 
     protected $validationRules = [];
     protected $validationMessages = [];

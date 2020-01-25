@@ -60,78 +60,27 @@
 	<div class="my-account">
 
 		<div class="tabs-container">
-        <!-- Register -->
 				<div class="tab-content" id="tab2" style="display: none;">
 					<h3 class="margin-bottom-10 margin-top-10">Create Your Profile</h3>
-
 					<form action="/my-account/createprofile" method="post" class="register">
-
+						<input type="hidden" name="id" id="" value="<?php echo $data->id?>">
 						<p class="form-row form-row-wide">
 							<label for="fname">First Name:</label>
-							<input type="text" class="input-text" name="fname" id="fname" value="" />
+							<input type="text" class="input-text" name="first_name" id="fname" value="<?php echo $data->first_name?>" />
 						</p>
 
 
 						<p class="form-row form-row-wide">
 							<label for="lname">Last Name:</label>
-							<input type="text" class="input-text" name="lname" id="lname" />
+							<input type="text" class="input-text" name="last_name" id="lname" value="<?php echo $data->last_name?>" />
 						</p>
 						<p class="form-row form-row-wide">
 							<label for="phone">Phone:</label>
-							<input type="text" class="input-text" name="phone" id="phone" />
-						</p>
-
-						<p class="form-row form-row-wide">
-							<label for="username">Username:</label>
-							<input type="text" class="input-text" name="username" id="username" />
-						</p>
-
-						<p class="form-row form-row-wide">
-							<label for="reg_password2">Province:</label>
-                            <select data-placeholder="Choose Categories" name="province" class="chosen-select">
-                                    <option>Central</option>
-                                    <option>Eastern</option>
-                                    <option>North Central</option>
-                                    <option>Northern</option>
-                                    <option>North Western</option>
-                                    <option>Sabaragamuwa</option>
-                                    <option>Southern</option>
-                                    <option>Uva</option>
-                                </select>
-						</p>
-                        <p class="form-row form-row-wide">
-							<label for="reg_email">District:</label>
-							<select data-placeholder="Choose Categories" name="district" class="chosen-select">
-                                    <option>Ampara</option>
-                                    <option>Anuradhapura</option>
-                                    <option>Badulla</option>
-                                    <option>Batticaloa</option>
-                                    <option>Colombo</option>
-                                    <option>Galle</option>
-                                    <option>Gampaha</option>
-                                    <option>Hambantota</option>
-									<option>Jaffna</option>
-                                    <option>Kalutara</option>
-                                    <option>Kandy</option>
-                                    <option>Kegalle</option>
-                                    <option>Kilinochchi</option>
-                                    <option>Kurunegala</option>
-                                    <option>Mannar</option>
-                                    <option>Matale</option>
-									<option>Matara</option>
-                                    <option>Monaragala</option>
-                                    <option>Mullaitivu</option>
-                                    <option>Nuwara Eliya</option>
-                                    <option>Polonnaruwa</option>
-                                    <option>Puttalam</option>
-                                    <option>Ratnapura</option>
-                                    <option>Trincomalee</option>
-									<option>Vavuniya</option>
-                                </select>
+							<input type="text" class="input-text" name="phone_no" id="phone" value="<?php echo $data->phone_no?>"/>
 						</p>
 
 						<p class="form-row">
-							<input type="submit" class="button" name="create" value="Create Profile" />
+							<input type="submit" class="button" name="create" value="Update Profile" />
 						</p>
 
 					</form>
