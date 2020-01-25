@@ -162,6 +162,52 @@
 	</div>
 	<!-- Widgets / End -->
 
+	<!-- Add comment model-->
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Post Your Comment Here</h4>
+						</div>
+						<div class="modal-body">
+							<?php 
+								echo "	
+									<form method='post' name='contactform' id='contactform' action='/dansel/comment/$data->id'>
+										<fieldset>
+											<div><input name='id' type='text' id='name' value='$data->id' style='display:none;' required/>
+											<div>
+												<label>Name:</label>
+												<input name='name' type='text' id='name' required/>
+											</div>
+											<div>
+												<label >Email: <span>*</span></label>
+												<input name='email' required type='email' id='email' pattern='^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$' />
+											</div>
+											<div>
+												<label>Comment: <span>*</span></label>
+												<textarea name='comment' cols='40' rows='3' id='comment' spellcheck='true' required></textarea>
+											</div>
+										</fieldset>
+										<div id='result'></div>
+										<br>
+										
+
+										<input type='submit' class='submit' id='submit' value='Post Comment'  styel='margin-top:15px;'/>
+										<div class='clearfix'></div>
+										<div class='margin-bottom-40'></div>
+									</form>";
+							?>
+						</div>
+					</div>
+
+				</div>
+			</div>
+	<!-- End of Add Comment model-->
+
 
 </div>
 

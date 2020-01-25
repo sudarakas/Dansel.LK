@@ -21,7 +21,6 @@ class CreateFeedbackTables extends Migration
          */
         $fields = [
             'dansel_id' => ['type' => 'int', 'constraint' => 9],
-            'user_id' => ['type' => 'int', 'constraint' => 9],
             'name' => ['type' => 'varchar', 'constraint' => 100],
             'email' => ['type' => 'varchar', 'constraint' => 100],
             'comment' => ['type' => 'varchar', 'constraint' => 1000],

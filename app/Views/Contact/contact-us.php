@@ -54,8 +54,7 @@
 			<!-- Success Message -->
 			<mark id="message"></mark>
 
-			<!-- Form -->
-			<form method="post" name="contactform" id="contactform">
+			<form method="post" name="contactform" id="contactform" action="/email">
 
 				<fieldset>
 
@@ -71,16 +70,13 @@
 
 					<div>
 						<label>Message: <span>*</span></label>
-						<textarea name="comment" cols="40" rows="3" id="comment" spellcheck="true"></textarea>
+						<textarea name="message" cols="40" rows="3" id="comment" spellcheck="true"></textarea>
 					</div>
 
 				</fieldset>
-				<div id="result"></div>
-				<input type="submit" class="submit" id="submit" value="Send Message" />
-				<div class="clearfix"></div>
+				<input type="submit" name="submit" value="Send Message">
 				<div class="margin-bottom-40"></div>
 			</form>
-
 		</section>
 		<!-- Contact Form / End -->
 
