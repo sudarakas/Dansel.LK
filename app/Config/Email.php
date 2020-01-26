@@ -7,7 +7,7 @@ class Email
 	/**
 	 * @var string
 	 */
-	public $fromEmail;
+	public $fromEmail = 'def70ad2c0-b8e5c5@inbox.mailtrap.io';
 
 	/**
 	 * @var string
@@ -26,7 +26,7 @@ class Email
 	 *
 	 * @var string
 	 */
-	public $protocol = 'mail';
+	public $protocol = 'smtp';
 
 	/**
 	 * The server path to Sendmail.
@@ -40,28 +40,28 @@ class Email
 	 *
 	 * @var string
 	 */
-	public $SMTPHost;
+	public $SMTPHost = 'smtp.mailtrap.io';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser;
+	public $SMTPUser = 'bf8c1b71ddbf3b';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass;
+	public $SMTPPass = '8fc00e043223b2';
 
 	/**
 	 * SMTP Port
 	 *
 	 * @var integer
 	 */
-	public $SMTPPort = 25;
+	public $SMTPPort = 2525;
 
 	/**
 	 * SMTP Timeout (in seconds)

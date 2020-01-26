@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <head>
 
     <!-- Basic Page Needs
@@ -77,6 +79,9 @@
 		<?php echo $data->description; ?>
 		</p>
 		<br>
+		<div class='six columns'>
+			<a href='' style='text-decoration:none;background:#03fc73;color:#ffffff' class='button white' data-toggle='modal' data-target='#myModal'></i>Add Comment</a>
+		</div>
 	</div>
 	</div>
 
