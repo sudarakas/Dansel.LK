@@ -95,8 +95,15 @@ $routes->post( '/my-account/createprofile', 'Authentication::editProfile',['filt
 $routes->get( '/my-account/registration', 'Authentication::showRegistrationPage');
 $routes->post( '/my-accountreg/register', 'Authentication::post_register' );
 $routes->get( '/logout', 'Authentication::logout' );
+
+//Dansel Comment Route
+$routes->post('/dansel/comment/(:any)', 'Comment::storeComment/$1'); //->Add Comments
+$routes->get('/dansel/(:any)', 'Comment::showComment/$1'); //->View Comment
+
 //Contact Us Route
-$routes->get( '/contact-us', 'Contact::showContactUs' );
+$routes->get('/contact-us', 'Contact::showContactUs');
+$routes->post('/email', 'EmailController::sendEmail'); //->send Email
+
 
 /**
 * --------------------------------------------------------------------
