@@ -75,6 +75,32 @@
 			<div class="clearfix"></div>
 		</div>
 
+                <div class="eleven columns maps">
+
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <div id="map"></div>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    /* height: 678px; */
+                                    width: 790px;
+                                }
+
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none!important;
+                                    /* /* height: 678px; */
+                                    width: 790px;
+                                }
+                            </style>
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+              
 		<p class="margin-reset">
 		<?php echo $data->description; ?>
 		</p>
@@ -129,7 +155,7 @@
 				</ul>
 
 
-				<a href="#small-dialog" class="popup-with-zoom-anim button">Set Direction</a>
+				<a href='http://www.google.com/maps/place/<?php print($data->location_lat); ?>,<?php print($data->location_lng); ?>' class="popup-with-zoom-anim button">Set Direction</a>
 
 				<div id="small-dialog" class="zoom-anim-dialog mfp-hide apply-popup">
 					<div class="small-dialog-headline">
@@ -240,6 +266,32 @@
 <script src="scripts/jquery.jpanelmenu.js"></script>
 <script src="scripts/stacktable.js"></script>
 
+<script>
+        var map;
+		<?php 
+			echo "var lat = $data->location_lat
+			var lng = $data->location_lng";
+		?>
+        
+	
+      	function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+		<?php 
+			echo "center: {lat: $data->location_lat, lng: $data->location_lng},";	
+		?>
+          zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+		<?php 
+			echo "position: {lat: $data->location_lat, lng: $data->location_lng},";
+		?>
+          map: map,
+        });
+      }
+    </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqEJqbGCHpvyJs-kfupMQzHeZJhfIO_OI&libraries=places&callback=initMap"
+        async defer></script>
 
 </body>
 </html>
